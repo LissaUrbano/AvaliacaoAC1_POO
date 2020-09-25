@@ -9,7 +9,7 @@ public class ContaCorrente {
         this.numeroConta = numeroConta;
         this.saldo = 0;
         this.cliente = nomeCliente;
-        this.limiteEspecial = limiteEspecial;
+        setLimiteEspecial(limiteEspecial);
     }
 
     public void depositar(double valorDeposito) { 
@@ -45,7 +45,7 @@ public class ContaCorrente {
         return limiteEspecial;
     }
 
-    public void setLimiteEspecial(float novoValorlimiteEspecial) { 
+    public void setLimiteEspecial(Double novoValorlimiteEspecial) { 
         if (novoValorlimiteEspecial >= 0) {
             this.limiteEspecial = novoValorlimiteEspecial;
             System.out.println("Limite Especial alterado para: R$= " + this.limiteEspecial + ".");
@@ -61,4 +61,12 @@ public class ContaCorrente {
     public void setCliente(String nomeCliente) { 
         this.cliente = nomeCliente;
     }
+
+    @Override
+    public String toString() {
+        return "ContaCorrente [cliente= " + cliente + ", limiteEspecial= " + limiteEspecial + ", numeroConta= "
+                + numeroConta + ", saldo= " + saldo + "]";
+    }
+
+    
 }
