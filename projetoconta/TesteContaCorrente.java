@@ -1,3 +1,4 @@
+//Lissa Bruna Urbano 120780
 import java.util.Scanner;
 
 public class TesteContaCorrente {
@@ -44,19 +45,21 @@ public class TesteContaCorrente {
         "Digite 4. Ver Saldo\n" +
         "Digite 5. para mostrar o somatório de todos os saldos\n" +
         "Digite 6. Sair\n==============================\n");
-
     }
 
-    static final String MENSAGEM_NUMEROCONTA = "Digite o numero da conta:";
+    static final String MENSAGEM_NUMEROCONTA = "Digite o numero da conta: ";
     static final String MENSAGEM_CONTAINVALIDA = "Número da conta inválido!";
 
     public static void executarOpcaoCadastro(){
 
         System.out.print("Digite o nome completo do cliente:");
         String nome = scan.nextLine();
+        double limiteEspecial = 0;
 
-        System.out.print("Digite valor do limite Especial da conta:");
-        double limiteEspecial = Double.parseDouble(scan.nextLine());
+        do {
+            System.out.print("Digite o valor do limite Especial da conta:");
+            limiteEspecial = Double.parseDouble(scan.nextLine());
+        } while (limiteEspecial < 0);
 
         System.out.println("Conta criada com sucesso! o numero da conta é: " + banco.adicionarConta(nome, limiteEspecial));
 

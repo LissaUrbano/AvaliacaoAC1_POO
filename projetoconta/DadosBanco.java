@@ -1,24 +1,15 @@
+//Lissa Bruna Urbano 120780
 import java.util.ArrayList;
 
 public class DadosBanco {
     
-    //atributos
     private int numeroSugeridoParaConta = 1001;
-
-    //Lista de objetos contas (todas as contascorretes do banco)
     ArrayList<ContaCorrente> listaContas = new ArrayList<>(); 
 
-
-
-    //método que instacia uma nova conta e adiciona a lista
     public String adicionarConta(String nome,Double limiteEspecial){
 
-        //converte int para string
         String numeroConta = Integer.toString(numeroSugeridoParaConta);
-
-        //instancia uma nova conta
         ContaCorrente varConta = new ContaCorrente(numeroConta, nome, limiteEspecial);
-
         listaContas.add(varConta);
 
         numeroSugeridoParaConta++;

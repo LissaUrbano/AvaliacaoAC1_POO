@@ -1,3 +1,4 @@
+//Lissa Bruna Urbano 120780
 public class ContaCorrente {
     
     private String numeroConta;
@@ -9,7 +10,7 @@ public class ContaCorrente {
         this.numeroConta = numeroConta;
         this.saldo = 0;
         this.cliente = nomeCliente;
-        setLimiteEspecial(limiteEspecial);
+        this.limiteEspecial = limiteEspecial;
     }
 
     public void depositar(double valorDeposito) { 
@@ -32,7 +33,6 @@ public class ContaCorrente {
         }
     }
 
-    //getters e setters
     public String getNumeroConta() {  
         return numeroConta; 
     }
@@ -43,15 +43,6 @@ public class ContaCorrente {
 
     public double getLimiteEspecial() {  
         return limiteEspecial;
-    }
-
-    public void setLimiteEspecial(Double novoValorlimiteEspecial) { 
-        if (novoValorlimiteEspecial >= 0) {
-            this.limiteEspecial = novoValorlimiteEspecial;
-            System.out.println("Limite Especial alterado para: R$= " + this.limiteEspecial + ".");
-        } else {
-            System.out.println("Impossivel alterar valor do Limite especial! valor informado menor que zero.");
-        }
     }
 
     public String getCliente() {  
